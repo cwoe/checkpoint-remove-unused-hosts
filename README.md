@@ -3,7 +3,7 @@ A script for removing unused hosts in a MDS environment.
 
 This script allows you to clean up the specified subnet by removing any unused hosts in it.
 
-The script currently uses netmiko to connect to the management server and runs the mgmt_cli commands there, I might use python requests in the future in order and skip the ssh-connection.
+The script uses the Checkpoint Web API, which is significantly faster than the CLI command.
 
 How it works:
 1. List all domains
@@ -17,6 +17,5 @@ How it works:
   
 Technically you could skip step 2d since the API does not allow you to delete hosts in groups.
 
-Building the script went very smooth and took ~3.5 hours.
 
 If you have any thougths on the script, feel free to share them with me.
