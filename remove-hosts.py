@@ -101,7 +101,7 @@ def logout(sid):
 	payload = {}
 	r = requests.post('https://'+ip+':'+api_port+'/web_api/logout', headers=headers, data=json.dumps(payload), verify=False)	
 
-def searchAndDestroy(network):
+def removeUnusedHost(network):
 	print("Getting Domains...")
 	headers = {'Content-Type' : 'application/json'}
 	payload = {'user' : username, 'password' : password}
@@ -123,4 +123,4 @@ def searchAndDestroy(network):
 		publish(sid)
 		logout(sid)
 
-searchAndDestroy(input("Enter subnet (Format: \"201.1.11.0/30\"):"))
+removeUnusedHost(input("Enter subnet (Format: \"201.1.11.0/30\"):"))
